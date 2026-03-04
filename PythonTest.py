@@ -29,10 +29,18 @@ def format_mac_hyphen(mac_str):
 def authorize_user():
     data = request.get_json()
     
+    # --- ADD THESE PRINT STATEMENTS FOR LOGGING ---
+    print("----- NEW AUTHORIZATION REQUEST -----")
+    print(f"Received payload: {data}")
+    # ----------------------------------------------
+    
     try:
         if not data.get('userMac') or not data.get('apMac'):
+            print("Error: Missing MAC addresses in payload") # Log this too
             return jsonify({"status": "error", "message": "Missing required MAC addresses"}), 400
 
+        print(f"Attempting to contact iMaster at {IMASTER_IP}...") # Log the connection attempt
+        
         token_url = f"https://{IMASTER_IP}/controller/v2/tokens"
         auth_payload = {"userName": API_USERNAME, "password": API_PASSWORD}
         
