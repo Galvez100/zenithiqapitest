@@ -62,7 +62,7 @@ def authorize_user():
             except Exception:
                 final_node_ip = clean_node_ip 
         else:
-            final_node_ip = "10.10.20.14"
+            final_node_ip = raw_node_ip
 
         auth_url = f"https://{IMASTER_IP}/controller/cloud/v2/northbound/accessuser/haca/authorization"
         
