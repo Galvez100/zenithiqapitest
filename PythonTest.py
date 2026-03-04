@@ -51,7 +51,7 @@ def authorize_user():
         token = token_response.json().get('data', {}).get('token_id')
 
         user_mac_formatted = format_mac_hyphen(data.get('userMac'))
-        ap_mac_formatted = format_mac_hyphen(data.get('apMac'))
+        ap_mac_formatted = format_mac_colon(data.get('apMac'))
         b64_ssid = data.get('ssid', '') # Passed directly, AP already encoded it
 
         raw_node_ip = data.get('nodeIp', '')
