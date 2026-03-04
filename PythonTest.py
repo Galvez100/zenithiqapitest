@@ -51,7 +51,7 @@ def authorize_user():
         token = token_response.json().get('data', {}).get('token_id')
 
         user_mac_formatted = format_mac_hyphen(data.get('userMac'))
-        ap_mac_formatted = format_mac_colon(data.get('apMac'))
+        ap_mac_formatted = format_mac_hyphen(data.get('apMac'))
         b64_ssid = data.get('ssid', '') # Passed directly, AP already encoded it
 
         raw_node_ip = data.get('nodeIp', '')
@@ -62,7 +62,7 @@ def authorize_user():
             except Exception:
                 final_node_ip = clean_node_ip 
         else:
-            final_node_ip = raw_node_ip
+            final_node_ip = "10.10.20.14"
 
         auth_url = f"https://{IMASTER_IP}/controller/cloud/v2/northbound/accessuser/haca/authorization"
         
