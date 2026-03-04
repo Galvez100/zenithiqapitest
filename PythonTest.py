@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app) 
 
 IMASTER_IP = os.getenv("IMASTER_IP", "200.94.112.100:18002")
-API_USERNAME = os.getenv("API_USERNAME", "Ziqapis")
+API_USERNAME = os.getenv("API_USERNAME", "apisziq")
 API_PASSWORD = os.getenv("API_PASSWORD", "Huawei123..")
 
 def format_mac_colon(mac_str):
