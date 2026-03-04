@@ -11,7 +11,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 app = Flask(__name__)
 CORS(app) 
 
-IMASTER_IP = os.getenv("IMASTER_IP", "119.8.11.5:18002")
+IMASTER_IP = os.getenv("IMASTER_IP", "200.94.112.100:18002")
 API_USERNAME = os.getenv("API_USERNAME", "Ziqapis")
 API_PASSWORD = os.getenv("API_PASSWORD", "Huawei123..")
 
